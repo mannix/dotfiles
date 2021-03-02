@@ -1,0 +1,23 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$php\
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
+
+command_timeout = 3600
+
+[fill]
+symbol = " "
+style = 'cyan'
+
+[git_branch]
+symbol = ' '
+format = '[$symbol$branch ](yellow)'
+
+[php]
+symbol = ' '
