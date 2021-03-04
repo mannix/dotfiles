@@ -5,8 +5,11 @@
 - clean: ['~']
 
 - link:
-    ~/.zshrc:
     ~/.gitconfig:
+    ~/.tmux.conf:
+    ~/.zsh-aliases:
+    ~/.zsh-junkdrawer:
+    ~/.zshrc:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

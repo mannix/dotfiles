@@ -1,21 +1,31 @@
-# Use Neovim
-export VISUAL=nvim
-export EDITOR='nvim'
-alias vim=nvim
-alias vi=nvim
+# .zshrc
+ZSH_BASE=$HOME/.dotfiles
 
-# General Aliases
-alias c='clear'
-alias l='ls -FlAh'
+source $ZSH_BASE/antigen/antigen.zsh
 
-# Prompt
-PROMPT='
-%1~ %# '
+source ~/.zsh-aliases
+source ~/.zsh-junkdrawer
+source ~/.zsh-private
 
-RPROMPT='%*'
+antigen use oh-my-zsh
 
-# Handy Functions
-# make a directory and cd into it
-function mkd() {
-  mkdir -p "$@" && cd "$_";
-}
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle z
+
+case `uname` in
+  Darwin)
+    # Commands for OS X go here
+    antigen bundle osx
+  ;;
+  Linux)
+    # Commands for Linux go here
+  ;;
+esac
+
+antigen apply
+
