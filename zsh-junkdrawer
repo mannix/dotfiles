@@ -39,7 +39,7 @@ zstyle :prompt:pure:git:stash show yes
 zstyle :prompt:pure:prompt:success color green
 zstyle :prompt:pure:prompt:error color red
 zstyle :prompt:pure:prompt:continuation color yellow
-zstyle :prompt:pure:path color green
+zstyle :prompt:pure:path color blue
 zstyle :prompt:pure:git:branch color cyan
 zstyle :prompt:pure:git:dirty color red
 zstyle :prompt:pure:git:stash color blue
