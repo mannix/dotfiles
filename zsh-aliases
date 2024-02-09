@@ -1,8 +1,0 @@
-# Use Neovim
-export VISUAL=nvim
-export EDITOR='nvim'
-alias vim=nvim
-alias vi=nvim
-
-alias c='clear'
-alias l='ls -FlAh'
