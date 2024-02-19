@@ -13,7 +13,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { import = "config.plugins" }
-    -- TO ADD
-    -- * nvim-treesitter
-    -- * lsp
 })
