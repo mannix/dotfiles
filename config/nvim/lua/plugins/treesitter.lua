@@ -9,7 +9,7 @@ return {
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "php", "rust", "javascript", "html" },
                 sync_install = false,
                 highlight = { enable = true },
-                indent = { enable = true }, 
+                indent = { enable = true },
                 incremental_selection = {
                     enable = true,
                     keymaps = {
@@ -60,6 +60,22 @@ return {
                         -- and should return true or false
                         include_surrounding_whitespace = true,
                     },
+                },
+            })
+
+            local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+            parser_config.blade = {
+                install_info = {
+                    url = "https://github.com/EmranMR/tree-sitter-blade",
+                    files = {"src/parser.c"},
+                    branch = "main",
+                },
+                filetype = "blade"
+            }
+            vim.treesitter.language.register('blade', 'blade')
+            vim.filetype.add({
+                pattern = {
+                    ['.*%.blade%.php'] = 'blade',
                 },
             })
         end
