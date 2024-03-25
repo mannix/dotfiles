@@ -46,7 +46,7 @@ vim.opt.breakindent = true
 -- vim.opt.undofile = true
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 500
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
