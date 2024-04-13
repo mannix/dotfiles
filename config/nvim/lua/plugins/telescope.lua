@@ -48,6 +48,16 @@ return {
         vim.keymap.set('n', '<leader>f.', builtin.oldfiles)
         vim.keymap.set('n', '<leader><leader>', builtin.buffers)
 
+        -- Use git_files if we're in a git project, otherwise find_files
+        vim.keymap.set('n', '<C-p>', function ()
+            local git_dir = vim.fn.finddir('.git', vim.fn.getcwd() .. ";")
+            if (git_dir ~= "") then
+                vim.cmd "Telescope git_files"
+            else
+                vim.cmd "Telescope find_files"
+            end
+        end)
+
         -- Also possible to pass additional configuration options.
         --  See `:help telescope.builtin.live_grep()` for information about particular keys
         vim.keymap.set('n', '<leader>s/', function()
