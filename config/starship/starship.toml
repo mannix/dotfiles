@@ -12,8 +12,8 @@ $character"""
 command_timeout = 3600
 
 [fill]
-symbol = " "
-style = 'cyan'
+symbol = "-"
+style = '#303030'
 
 [git_branch]
 symbol = ' '
@@ -21,3 +21,5 @@ format = '[$symbol$branch ](yellow)'
 
 [php]
 symbol = ' '
+style = '#c6b6ee'
+format = ' [$symbol($version)]($style)'
