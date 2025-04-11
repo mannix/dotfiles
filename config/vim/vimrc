@@ -179,8 +179,8 @@ catch
 endtry
 
 " Netrw
-inoremap <c-e> <Esc>:Lex<cr>:vertical resize 30<cr>
-nnoremap <c-e> <Esc>:Lex<cr>:vertical resize 30<cr>
+inoremap <c-e> <Esc>:Lex<cr>:vertical resize 40<cr>
+nnoremap <c-e> <Esc>:Lex<cr>:vertical resize 40<cr>
 
 " Use 'l' instead of <CR> to open files
 augroup netrw_setup | au!
