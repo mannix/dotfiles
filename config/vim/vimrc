@@ -1,5 +1,6 @@
 " ========================================
 " Options
+" fweoifj
 " ========================================
 
 set encoding=UTF-8
@@ -8,7 +9,6 @@ set nohlsearch " Disable highlight on search
 set number " Enable line numbers
 set mouse=a " Enable mouse mode
 set breakindent " Enable break indent
-set undofile " Save undo history
 set ignorecase " Case-insensitive searching unless \C or capital in search
 set smartcase " Enable smart case
 set signcolumn=yes " Keep signcolumn on by default
@@ -48,6 +48,15 @@ set statusline+=%l " Current line
 set statusline+=/ " Separator
 set statusline+=%L " Total lines
 
+" save undo info
+if !isdirectory($HOME."/.vim")
+  call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+  call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
 
 " ========================================
 " Keymaps
@@ -179,6 +188,7 @@ catch
 endtry
 
 " Netrw
+let g:netrw_home=$HOME.'/.vim'
 inoremap <c-e> <Esc>:Lex<cr>:vertical resize 40<cr>
 nnoremap <c-e> <Esc>:Lex<cr>:vertical resize 40<cr>
 
