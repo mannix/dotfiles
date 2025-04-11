@@ -1,6 +1,7 @@
 " ========================================
 " Options
 " ========================================
+ " test
 
 set encoding=UTF-8
 set spelllang=en_us,de_de,es_es
@@ -14,8 +15,6 @@ set smartcase " Enable smart case
 set signcolumn=yes " Keep signcolumn on by default
 set updatetime=250 " Decrease update time
 set timeoutlen=300 " Time to wait for a mapped sequence to complete (in milliseconds)
-set nobackup " Don't create a backup file
-set nowritebackup " Don't write backup before overwriting
 set completeopt=menuone,noselect " Better completion experience
 set whichwrap+=<,>,[,],h,l " Allow certain keys to move to the next line
 set nowrap " Display long lines as one line
@@ -155,13 +154,6 @@ noremap <silent> <leader>e :Lex<CR>
 " Syntax highlighting
 syntax on
 
-" Colorscheme
-colorscheme industry
-" set background=dark
-" hi Normal ctermbg=NONE guibg=NONE
-" hi NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-" hi VertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
-
 " Sync clipboard with OS
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed "OSX
@@ -180,6 +172,13 @@ set termguicolors
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Colorscheme
+try
+  colorscheme jellybeans
+catch
+  colorscheme habamax
+endtry
+
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -190,4 +189,5 @@ let g:netrw_winsize = 25
 augroup netrw_setup | au!
     au FileType netrw nmap <buffer> l <CR>
 augroup END
+
 
