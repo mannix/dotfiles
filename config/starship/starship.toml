@@ -25,7 +25,7 @@ symbol = ' '
 format = '[$symbol$branch ](blue)'
 
 [git_status]
-style = 'fg:red'
+style = 'fg:yellow'
 format = '([$all_status$ahead_behind]($style) )'
 
 [fill]
