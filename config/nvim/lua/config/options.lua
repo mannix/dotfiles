@@ -27,6 +27,7 @@ vo.softtabstop = 4
 vo.autoindent = true
 vo.expandtab = true
 vo.termguicolors = true
+vo.showmode = false
 --vo.showtabline = 2
 
 -- Search
