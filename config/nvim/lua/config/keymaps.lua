@@ -22,8 +22,8 @@ m.set('n', '<leader>h', '<C-w>s') -- horizontal split
 m.set('n', '<leader>se', '<C-w>=') -- balance splits
 m.set('n', '<leader>sc', ':close<CR>') -- close split
 
-m.set('n', '<Tab>', ':bnext<CR>')
-m.set('n', '<S-Tab>', ':bprevious<CR>')
+m.set('n', '<Tab>', ':bnext!<CR>')
+m.set('n', '<S-Tab>', ':bprevious!<CR>')
 m.set('n', '<leader>x', '<cmd>bd<CR>') -- close buffer safely
 m.set('n', '<leader>b', '<cmd>enew<CR>') -- create empty buffer
 
