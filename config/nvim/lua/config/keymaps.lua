@@ -9,10 +9,10 @@ m.set('n', '<C-k>', '<C-w><C-k>')
 
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd('TextYankPost', {
-    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 m.set('n', 'x', '"_x') -- don't copy when deleting a single char
@@ -33,4 +33,3 @@ m.set('n', '<leader>tn', ':tabn<CR>') -- next tab
 m.set('n', '<leader>tp', ':tabp<CR>') -- prev tab
 
 m.set('n', '<leader>lw', '<cmd>set wrap!<CR>') -- toggle line wrap
-

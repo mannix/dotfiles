@@ -3,12 +3,12 @@ local vg = vim.g
 local vo = vim.opt
 
 -- Leader
-vg.mapleader = " "
-vg.maplocalleader = "\\"
+vg.mapleader = ' '
+vg.maplocalleader = '\\'
 
 -- Setting after `UiEnter` for performance reasons, allegedly
 vim.schedule(function()
-	vo.clipboard = 'unnamedplus'
+  vo.clipboard = 'unnamedplus'
 end)
 
 -- Visual
