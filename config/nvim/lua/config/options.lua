@@ -47,3 +47,7 @@ vo.backspace = 'indent,eol,start'
 vo.fileencoding = 'utf-8'
 vo.iskeyword:append '-'
 vo.runtimepath:remove '/usr/share/vim/vimfiles'
+
+-- Colorscheme (will be overwritten by plugin colorscheme, if set)
+vo.background = 'dark'
+vim.cmd.colorscheme 'default'

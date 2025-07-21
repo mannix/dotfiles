@@ -17,19 +17,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 m.set('n', 'x', '"_x') -- don't copy when deleting a single char
 
-m.set('n', '<leader>v', '<C-w>v') -- vertical split
-m.set('n', '<leader>h', '<C-w>s') -- horizontal split
-m.set('n', '<leader>se', '<C-w>=') -- balance splits
-m.set('n', '<leader>sc', ':close<CR>') -- close split
+m.set('n', '<leader>v', '<C-w>v', { desc = 'Vertical split' })
+m.set('n', '<leader>h', '<C-w>s', { desc = 'Horizontal split' })
+m.set('n', '<leader>se', '<C-w>=', { desc = 'Balance splits' })
+m.set('n', '<leader>sc', ':close<CR>', { desc = 'Close split' })
 
 m.set('n', '<Tab>', ':bnext!<CR>')
 m.set('n', '<S-Tab>', ':bprevious!<CR>')
-m.set('n', '<leader>x', '<cmd>bd<CR>') -- close buffer safely
-m.set('n', '<leader>b', '<cmd>enew<CR>') -- create empty buffer
+m.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Close buffer safely' })
+m.set('n', '<leader>b', '<cmd>enew<CR>', { desc = 'Create empty buffer' })
 
-m.set('n', '<leader>to', ':tabnew<CR>') -- open new tab
-m.set('n', '<leader>tx', ':tabclose<CR>') -- close tab
-m.set('n', '<leader>tn', ':tabn<CR>') -- next tab
-m.set('n', '<leader>tp', ':tabp<CR>') -- prev tab
+m.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open new tab' })
+m.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close tab' })
+m.set('n', '<leader>tn', ':tabn<CR>', { desc = 'Next tab' })
+m.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Previous tab' })
 
-m.set('n', '<leader>lw', '<cmd>set wrap!<CR>') -- toggle line wrap
+m.set('n', '<leader>lw', '<cmd>set wrap!<CR>', { desc = 'Toggle line wrap' })
+
+-- Diagnostic keymaps.
+m.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+m.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+m.set('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
+m.set('n', '<Leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic quickfix list' })

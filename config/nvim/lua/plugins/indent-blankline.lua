@@ -1,4 +1,4 @@
-vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#292929' })
+--vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#292929' })
 --vim.api.nvim_set_hl(0, 'IblScope', { fg = '#000000' })
 
 return {
@@ -10,7 +10,7 @@ return {
     },
     scope = {
       char = '▎',
-      highlight = { '@punctuation.bracket' },
+      --highlight = { '@punctuation.bracket' },
       show_start = false,
       show_end = false,
       show_exact_scope = false,
