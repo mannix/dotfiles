@@ -1,4 +1,7 @@
 font-family = "JetBrainsMono Nerd Font Propo"
 font-size = 14
 
-theme = jellybeans
+split-divider-color = #4f5258
+unfocused-split-opacity = 0.6
+
+theme = Tomorrow Night
