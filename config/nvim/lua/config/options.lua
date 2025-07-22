@@ -21,9 +21,9 @@ vo.signcolumn = 'yes'
 vo.list = true
 vo.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vo.cursorline = true
-vo.shiftwidth = 4
-vo.tabstop = 4
-vo.softtabstop = 4
+vo.shiftwidth = 2
+vo.tabstop = 2
+vo.softtabstop = 2
 vo.autoindent = true
 vo.expandtab = true
 vo.termguicolors = true
@@ -50,4 +50,4 @@ vo.runtimepath:remove '/usr/share/vim/vimfiles'
 
 -- Colorscheme (will be overwritten by plugin colorscheme, if set)
 vo.background = 'dark'
-vim.cmd.colorscheme 'default'
+vim.cmd.colorscheme 'habamax'

@@ -11,6 +11,6 @@ return {
     end,
   },
   init = function()
-    vim.cmd.colorscheme 'jellybeans'
+    --vim.cmd.colorscheme 'jellybeans'
   end,
 }
