@@ -10,16 +10,16 @@ theme = tokyonight_night
 keybind = ctrl+space>r=reload_config
 keybind = ctrl+space>n=new_window
 # Splits
-keybind = ctrl+space>\     =new_split:right
-keybind = ctrl+space>-     =new_split:down
-keybind = ctrl+space>equal =equalize_splits
-keybind = ctrl+space>z     =toggle_split_zoom
-keybind = ctrl+space>l     =goto_split:right
-keybind = ctrl+space>j     =goto_split:down
-keybind = ctrl+space>h     =goto_split:left
-keybind = ctrl+space>k     =goto_split:up
-keybind = ctrl+space>p     =goto_split:previous
-keybind = ctrl+space>n     =goto_split:next
+keybind = ctrl+space>\=new_split:right
+keybind = ctrl+space>-=new_split:down
+keybind = ctrl+space>equal=equalize_splits
+keybind = ctrl+space>z=toggle_split_zoom
+keybind = ctrl+space>l=goto_split:right
+keybind = ctrl+space>j=goto_split:down
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>k=goto_split:up
+keybind = ctrl+space>p=goto_split:previous
+keybind = ctrl+space>n=goto_split:next
 
 # Default Keybinds
 #keybind = super+ctrl+down =resize_split:down,10
