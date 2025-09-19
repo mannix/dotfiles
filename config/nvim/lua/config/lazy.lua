@@ -1,4 +1,3 @@
--- Botstrap lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -15,13 +14,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim
 require('lazy').setup {
   change_detection = { enabled = false },
   spec = {
-    -- import your plugins
     { import = 'plugins' },
   },
-  -- automatically check for plugin updates
   checker = { enabled = false },
 }

@@ -7,31 +7,45 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "autosave": "on_focus_change",
-  "relative_line_numbers": true,
-  "icon_theme": "Zed (Default)",
+  "show_edit_predictions": false,
   "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet"
+      "model": "claude-sonnet-4"
     },
     "model_parameters": [],
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": true
   },
-  "vim_mode": true,
-  "ui_font_family": "ZedMono Nerd Font",
+  "autosave": "on_focus_change",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_size": 14,
   "buffer_font_weight": 400,
   "buffer_line_height": {
-    "custom": 1.3
+    "custom": 1.4
   },
+  "features": {
+    "edit_prediction_provider": "zed" // maybe try "supermaven"
+  },
+  "icon_theme": "Zed (Default)",
+  "lsp": {
+    "kotlin-language-server": {
+      "settings": {
+        "compiler": {
+          "jvm": {
+            "target": "17"
+          }
+        }
+      }
+    }
+  },
+  "lsp_document_colors": "background",
+  "relative_line_numbers": true,
+  "terminal": { "font_weight": 300 },
   "theme": {
     "mode": "system",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night Storm"
-  }
+    "light": "Everforest Dark Medium",
+    "dark": "macOS Classic Dark"
+  },
+  "ui_font_family": "CaskaydiaMono Nerd Font Propo",
+  "vim_mode": true
 }
