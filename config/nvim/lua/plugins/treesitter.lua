@@ -9,7 +9,8 @@ return {
         'bash', 'diff',
         'markdown', 'markdown_inline',
         'html', 'css', 'javascript',
-        'php'
+        'php',
+        'kotlin'
       },
       auto_install = true,
       highlight = {
