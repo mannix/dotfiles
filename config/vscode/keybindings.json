@@ -1,0 +1,64 @@
+[
+  // ── Activity Panel ─────────────────────────────────────────────────────────
+  {
+    "key": "cmd+k e",
+    "command": "workbench.view.explorer",
+  },
+  {
+    "key": "cmd+k g",
+    "command": "workbench.view.scm",
+  },
+  {
+    "key": "cmd+k d",
+    "command": "workbench.view.debug",
+  },
+  {
+    "key": "cmd+k x",
+    "command": "workbench.extensions.action.focusExtensionsView",
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+  },
+
+  // ── Terminal ───────────────────────────────────────────────────────────────
+  { "key": "cmd+t", "command": "workbench.action.terminal.toggleTerminal" },
+
+  // Navigate from terminal back to editor with Ctrl+K (terminal is below editor)
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus",
+  },
+  // Ctrl+H/L between terminal panes (multiple terminals)
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus",
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus",
+  },
+
+  // ── Editor splits ─────────────────────────────────────────────────────────
+  { "key": "cmd+\\", "command": "workbench.action.splitEditor" },
+  { "key": "cmd+shift+\\", "command": "workbench.action.splitEditorDown" },
+
+  // ── Panel ─────────────────────────────────────────────────────────────────
+  { "key": "cmd+j", "command": "workbench.action.togglePanel" },
+
+  // ── Quick nav ─────────────────────────────────────────────────────────────
+  // Tab through recent editors
+  { "key": "shift+cmd+[", "command": "workbench.action.previousEditor" },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.nextEditor",
+  },
+  {
+    "key": "shift+cmd+/",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "terminalProcessSupported",
+  },
+]

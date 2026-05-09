@@ -1,10 +1,13 @@
 # Aliases
 alias c=clear
 alias l='ls -Flash'
-alias ll=l
+alias ll='eza -Blah --group-directories-first'
 alias gco='git checkout'
 alias gst='git status'
 alias nv=nvim
+alias p3=python3
+alias python=python3.12
+alias pip=pip3.12
 
 export EDITOR="nvim"
 
@@ -64,3 +67,12 @@ npm()  { _nvm_load; npm  "$@"; }
 npx()  { _nvm_load; npx  "$@"; }
 
 eval "$(starship init zsh)"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mike/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

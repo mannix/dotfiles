@@ -1,32 +1,38 @@
-return {
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
-    opts = {
-      ensure_installed = {
-        'lua', 'luadoc', 'query', 'vim', 'vimdoc',
-        'bash', 'diff',
-        'markdown', 'markdown_inline',
-        'html', 'css', 'javascript',
-        'php',
-        'kotlin'
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
-    -- There are additional nvim-treesitter modules that you can use to interact
-    -- with nvim-treesitter. You should go explore a few and see what interests you:
-    --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-    --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-    --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-  },
-}
+-- nvim-treesitter v2 (rewrite, requires Neovim 0.12+)
+-- The old nvim-treesitter.configs module is gone. setup() now only accepts
+-- install_dir. Highlighting is Neovim-native (vim.treesitter) and is enabled
+-- per-buffer via the FileType autocmd below.
+--
+-- Parser installation requires: tree-sitter-cli, curl, tar, C compiler
+-- (see install.sh)
+
+local langs = { 'lua', 'python', 'javascript', 'typescript', 'bash', 'go' }
+
+-- Store parsers inside the config dir so they're reliably in runtimepath
+require('nvim-treesitter').setup({
+  install_dir = vim.fn.stdpath('config') .. '/ts_parsers',
+})
+
+-- Enable native treesitter highlighting when a matching file is opened.
+-- pcall guards against missing parsers — they install async on first VimEnter.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'lua', 'python', 'javascript', 'typescript', 'sh', 'go' },
+  callback = function(ev)
+    pcall(vim.treesitter.start, ev.buf)
+  end,
+})
+
+-- Auto-install any missing parsers at startup (async, does not block editing)
+vim.api.nvim_create_autocmd('VimEnter', {
+  once = true,
+  callback = function()
+    local installed = {}
+    for _, l in ipairs(require('nvim-treesitter.config').get_installed()) do
+      installed[l] = true
+    end
+    local missing = vim.tbl_filter(function(l) return not installed[l] end, langs)
+    if #missing > 0 then
+      require('nvim-treesitter.install').install(missing)
+    end
+  end,
+})
